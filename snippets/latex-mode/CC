@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: CC
+# key: CC
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{C}$0

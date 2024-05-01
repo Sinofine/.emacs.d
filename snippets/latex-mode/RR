@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: RR
+# key: rr
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{R}$0

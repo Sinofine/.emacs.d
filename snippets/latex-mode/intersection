@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: Nn
+# group: math
+# name: Intersection
+# condition: (and (texmathp) (quote auto))
+# --
+\bigcap_{${1:i=1}}^{${2:n}}$0

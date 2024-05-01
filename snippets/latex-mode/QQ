@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: QQQ
+# key: QQ
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{Q}$0

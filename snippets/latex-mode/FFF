@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: FFF
+# key: FFF
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{F}_{p}$0

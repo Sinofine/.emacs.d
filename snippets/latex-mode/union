@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: uuu
+# group: math
+# name: Union
+# condition: (and (texmathp) (quote auto))
+# --
+\bigcup_{${1:i=1}}^{${2:n}}$0

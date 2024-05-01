@@ -1,0 +1,6 @@
+# key: prof
+# name: prof org
+# --
+#+begin_proof
+$0
+#+end_proof

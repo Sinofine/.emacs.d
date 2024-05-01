@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Fmult
+# key: Fmult
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{F}_{p}^{*}$0

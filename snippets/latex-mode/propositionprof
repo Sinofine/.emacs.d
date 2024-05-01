@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: proposition
+# key: ppstpf
+# group: environments
+# --
+\begin{proposition}
+$0
+\end{proposition}
+\begin{proof}
+
+\end{proof}

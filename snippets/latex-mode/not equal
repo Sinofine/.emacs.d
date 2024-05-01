@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: not equal
+# key: nqq
+# condition: (and (texmathp) 'auto)
+# group: math
+# --
+\\ne

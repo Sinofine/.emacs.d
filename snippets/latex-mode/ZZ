@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ZZ
+# key: zz
+# condition: (and (texmathp) 'auto)
+# --
+
+\mathbb{Z}$0
