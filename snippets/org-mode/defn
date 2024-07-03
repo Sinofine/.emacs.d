@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: defn org
+# key: defn
+# --
+#+begin_definition
+$1
+#+end_definition
+$0

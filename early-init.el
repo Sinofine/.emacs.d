@@ -40,6 +40,11 @@
     (require 'elpaca)
     (elpaca-generate-autoloads "elpaca" repo)
     (load "./elpaca-autoloads")))
+(require 'benchmark-init)
+(benchmark-init/activate)
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
 (setq package-enable-at-startup nil)
+(elpaca elpaca-use-package
+  (elpaca-use-package-mode))
+(add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
