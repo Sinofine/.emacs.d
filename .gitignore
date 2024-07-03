@@ -50,3 +50,11 @@ flycheck_*
 auto-save-list/
 recentf
 transient
+
+# database
+*.db
+.local/
+eshell/
+history
+projects
+network-security.data
