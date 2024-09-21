@@ -6,6 +6,14 @@
   (meow-global-mode 1))
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (meow-normal-define-key
+   ;; wrap && unwrap
+   '("\"" . insert-pair)
+   '("[" . insert-pair)
+   '("{" . insert-pair)
+   '("(" . insert-pair)
+   '("]" . delete-pair) ;; NOTE maybe custom `delete-pair-blink-delay'
+   )
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev)

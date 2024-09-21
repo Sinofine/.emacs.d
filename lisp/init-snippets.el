@@ -9,6 +9,8 @@
 	(yas-expand))))
   (add-hook 'post-command-hook #'my-yas-try-expanding-auto-snippets)
   (add-to-list 'warning-suppress-types '(yasnippet backquote-change))
+  (with-eval-after-load 'cdlatex
+    (add-hook 'cdlatex-tab-hook #'yas-expand))
   :init
   (add-hook 'elpaca-after-init-hook #'yas-global-mode))
 
