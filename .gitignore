@@ -58,3 +58,5 @@ eshell/
 history
 projects
 network-security.data
+.lsp-session-v1
+request/
