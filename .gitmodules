@@ -1,0 +1,6 @@
+[submodule "tempel-collection-sinofine"]
+	path = tempel-collection-sinofine
+	url = git@github.com:Sinofine/tempel-collection-sinofine.git
+[submodule "tempel-collection"]
+	path = tempel-collection
+	url = git@github.com:Sinofine/tempel-collection-sinofine.git

@@ -3,7 +3,10 @@
 (use-package emacs :ensure nil :config
   (setq
    ring-bell-function #'ignore
-   make-backup-files nil)
+   make-backup-files nil
+   tab-always-indent 'complete
+   text-mode-ispell-word-completion nil
+   read-extended-command-predicate #'command-completion-default-include-p)
   (pixel-scroll-precision-mode 1)
   (tool-bar-mode -1)
   (set-face-attribute 'mode-line nil
@@ -48,14 +51,14 @@
   :config
   (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
   (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))
-(use-package doom-modeline
-  :ensure t
-  :custom (doom-modeline-height 28)
-  :hook (elpaca-after-init . doom-modeline-mode)
-  :config
-  ;; (add-hook 'elpaca-after-init-hook 'doom-modeline-mode)
-  (setq-default mode-line-format nil)
-  )
+;; (use-package doom-modeline
+;;   :ensure t
+;;   :custom (doom-modeline-height 28)
+;;   :hook (elpaca-after-init . doom-modeline-mode)
+;;   :config
+;;   ;; (add-hook 'elpaca-after-init-hook 'doom-modeline-mode)
+;;   (setq-default mode-line-format nil)
+;;   )
 (use-package dashboard :ensure nil
   :config
   (setopt dashboard-startup-banner (expand-file-name "logo/ucas.svg" user-emacs-directory)
@@ -96,14 +99,18 @@
   (add-hook 'elpaca-after-init-hook
 	    (lambda () (setq display-time-string-forms '((cn-zodiac-time 'branches)))
 	      (display-time-mode))))
-
-(dolist (charset '(kana han cjk-misc bopomofo))
+(defun config-font (frame)
+  (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font t ;;"fontset-default"
                     charset
 		    (font-spec :family "等距更纱宋体 Slab SC" :weight 'medium )))
+  (set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
+  (remove-hook 'after-make-frame-functions #'config-font)
+  )
+(add-hook 'after-make-frame-functions #'config-font)
+
 ;; (setopt header-line-format nil)
-(add-to-list 'default-frame-alist '(font . "CMU Typewriter Text-16"))
-(set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
+;; (add-to-list 'default-frame-alist '(font . "CMU Typewriter Text-16"))
 (add-to-list 'default-frame-alist '(width . 90))
 (add-to-list 'default-frame-alist '(height . 27))
 (defun display-startup-echo-area-message () nil)
