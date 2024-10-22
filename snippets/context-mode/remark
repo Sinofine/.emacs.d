@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: remark
+# key: rmk
+# group: environments
+# --
+\startremark
+$0
+\stopremark

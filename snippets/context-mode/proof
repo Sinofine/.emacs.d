@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: proof
+# key: prof
+# group: environments
+# --
+\startproof
+$0
+\stopproof

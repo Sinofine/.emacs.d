@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: example
+# key: exmp
+# group: environments
+# condition: (quote auto)
+# --
+#example[$0]

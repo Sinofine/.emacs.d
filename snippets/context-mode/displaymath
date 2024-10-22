@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: displaymath
+# key: dm
+# condition: (and (not (texmathp)) (quote auto))
+# group: math
+# --
+\startformula
+$0
+\stopformula

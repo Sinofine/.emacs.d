@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: proof
+# key: prff
+# group: environments
+# condition: (quote auto)
+# --
+#proof[$0]

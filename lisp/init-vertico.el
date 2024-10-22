@@ -1,8 +1,8 @@
 ;;;init-vertico.el -*- lexical-binding: t -*-
-;; (use-package which-key
-  ;; :ensure t
-  ;; :defer t
-  ;; :init (which-key-mode))
+(use-package which-key
+  :ensure t
+  :defer t
+  :init (which-key-mode))
 (use-package vertico
   :ensure t
   :defer t
@@ -16,10 +16,9 @@
   )
 (use-package orderless
   :ensure t
-  :defer t
+  :after vertico
   :custom
   (completion-styles '(orderless basic))
-  (completion-category-defaults nil)
   (completion-category-overrides '((file (styles basic partial-completion)))))
 (use-package savehist
   :init
@@ -169,8 +168,10 @@
   (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
   (corfu-auto t)                 ;; Enable auto completion
   (corfu-separator ?\s)          ;; Orderless field separator
-  (corfu-quit-at-boundary t)   
-  (corfu-quit-no-match t)      
+  (corfu-quit-at-boundary nil)
+  ;; (corfu-auto-delay 1)
+  ;; (corfu-auto-prefix 2)
+  (corfu-quit-no-match 'separator)      
   (corfu-preview-current nil)    ;; Disable current candidate preview
   (corfu-preselect 'prompt)      ;; Preselect the prompt
   (corfu-on-exact-match nil)     ;; Configure handling of exact matches

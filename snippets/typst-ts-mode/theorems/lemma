@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: lemma
+# key: lmma
+# group: environments
+# condition: (quote auto)
+# --
+#lemma[$0]

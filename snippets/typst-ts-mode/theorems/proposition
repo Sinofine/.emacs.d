@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: proposition
+# key: ppst
+# group: environments
+# condition: (quote auto)
+# --
+#proposition[$0]

@@ -9,10 +9,10 @@
   (meow-normal-define-key
    ;; wrap && unwrap
    '("\"" . insert-pair)
-   '("[" . insert-pair)
+   ;; '("[" . insert-pair)
    '("{" . insert-pair)
    '("(" . insert-pair)
-   '("]" . delete-pair) ;; NOTE maybe custom `delete-pair-blink-delay'
+   ;; '("]" . delete-pair) ;; NOTE maybe custom `delete-pair-blink-delay'
    )
   (meow-motion-overwrite-define-key
    '("j" . meow-next)

@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: proposition
+# key: ppst
+# group: environments
+# --
+\startproposition
+$0
+\stopproposition

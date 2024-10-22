@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: corollary
+# key: corr
+# group: environments
+# --
+\startcorollary
+$0
+\stopcorollary

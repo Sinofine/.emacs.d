@@ -1,3 +1,4 @@
+# -*- mode: snippet -*-
 # key: mk
 # name: Inline Math
 # condition: (and (not (texmathp)) (quote auto))

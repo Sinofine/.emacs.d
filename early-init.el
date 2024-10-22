@@ -3,6 +3,7 @@
 (setq user-full-name "Sinofine Lotusie"
       user-mail-address "i@sinofine.me"
       epa-file-encrypt-to "B81EC219E528172D41DE8984C5A8B0172CE2D811")
+(require 'benchmark-init-modes)
 (setq elpaca-core-date '(20240430))
 (defvar elpaca-installer-version 0.7)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
@@ -40,8 +41,7 @@
     (require 'elpaca)
     (elpaca-generate-autoloads "elpaca" repo)
     (load "./elpaca-autoloads")))
-(require 'benchmark-init)
-(benchmark-init/activate)
+;; (benchmark-init/activate)
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
 (setq package-enable-at-startup nil)

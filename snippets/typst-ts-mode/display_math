@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: display math
+# key: dm
+# condition: (quote auto)
+# --
+$ $1 $$0

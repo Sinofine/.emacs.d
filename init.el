@@ -1,15 +1,13 @@
 ;;; init.el -*- lexical-binding: t; -*-
-;; (use-package benchmark-init
-;;   :ensure t
-;;   :config
-;; (add-hook 'elpaca-after-init-hook 'benchmark-init/deactive))
 (let ((file-name-handler-alist nil))
 (add-to-list 'load-path (expand-file-name "lisp/" user-emacs-directory))
+;; (add-to-list 'load-path (expand-file-name "tempel-collection/" user-emacs-directory))
 (require 'init-meow)
 (require 'init-ui)
 (require 'init-latex)
 (require 'init-apps)
 (require 'init-snippets)
+;; (require 'init-tempel)
 (require 'init-vertico)
 (require 'init-utils)
 (require 'init-lang)

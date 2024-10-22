@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: definition
+# key: defn
+# group: environments
+# condition: (quote auto)
+# --
+#definition[$0]

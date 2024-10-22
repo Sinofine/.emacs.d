@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: remark
+# key: rmkk
+# group: environments
+# condition: (quote auto)
+# --
+#remark[$0]

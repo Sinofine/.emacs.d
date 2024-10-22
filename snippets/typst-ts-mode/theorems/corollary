@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: corollary
+# key: corr
+# group: environments
+# condition: (quote auto)
+# --
+#corollary[$0]

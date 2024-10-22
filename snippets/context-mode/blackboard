@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: blackboard
+# key: mbb
+# condition: (and (texmathp) (quote auto))
+# --
+\\blackboard{$0}

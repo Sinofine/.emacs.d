@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: example
+# key: exm
+# group: environments
+# --
+\startexample
+$0
+\stopexample

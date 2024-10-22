@@ -6,6 +6,11 @@
 (use-package nix-mode
   :ensure t
   :mode "\\.nix\\'")
+;;; typst
+(use-package typst-ts-mode
+  :ensure (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
+  :custom
+  (typst-ts-mode-watch-options "--open"))
 ;;; rust
 (use-package rust-mode
   :ensure t

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: theorem
+# key: thrm
+# group: environments
+# condition: (quote auto)
+# --
+#theorem[$0]
