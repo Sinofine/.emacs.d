@@ -15,9 +15,9 @@
 			      :color "light gray"
 			      ;; :style 'flat-button
 			      ))
-  (scroll-bar-mode -1)
-  (menu-bar-mode -1)
-  (set-face-attribute 'fringe nil :background "white")
+  ;; (scroll-bar-mode -1)
+  ;; (menu-bar-mode -1)
+  ;; (set-face-attribute 'fringe nil :background "white")
   ;; (global-display-line-numbers-mode)
   ;; (fringe-mode 0)
   ;; (add-hook
@@ -59,19 +59,19 @@
 ;;   ;; (add-hook 'elpaca-after-init-hook 'doom-modeline-mode)
 ;;   (setq-default mode-line-format nil)
 ;;   )
-(use-package dashboard :ensure nil
-  :config
-  (setopt dashboard-startup-banner (expand-file-name "logo/ucas.svg" user-emacs-directory)
-	  dashboard-banner-logo-title "东风夜绽千树 吹移繁星滴雨幕
-雕轮宝骑满路 笑语香透临安府"
-	  dashboard-center-content t
-	  dashboard-vertically-center-content t
-	  dashboard-items '((recents . 5))
-	  )
-  (setq dashboard-footer-messages '("Sinofine Lotusie's Emacs Configuration."))
-  (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
-  (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
-  (dashboard-setup-startup-hook))
+;; (use-package dashboard :ensure nil
+;;   :config
+;;   (setopt dashboard-startup-banner (expand-file-name "logo/hfut.svg" user-emacs-directory)
+;; 	  dashboard-banner-logo-title "东风夜绽千树 吹移繁星滴雨幕
+;; 雕轮宝骑满路 笑语香透临安府"
+;; 	  dashboard-center-content t
+;; 	  dashboard-vertically-center-content t
+;; 	  dashboard-items '((recents . 5))
+;; 	  )
+;;   (setq dashboard-footer-messages '("Sinofine Lotusie's Emacs Configuration."))
+;;   (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+;;   (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+;;   (dashboard-setup-startup-hook))
 ;; (use-package splash-screen
 ;;   :ensure (splash-screen :host github :repo "rougier/emacs-splash"
 ;; 			 :files ("splash-screen.el"))
