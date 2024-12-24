@@ -11,6 +11,20 @@
   :ensure (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
   :custom
   (typst-ts-mode-watch-options "--open"))
+
+(with-eval-after-load 'eglot
+  (with-eval-after-load 'typst-ts-mode
+    (add-to-list 'eglot-server-programs
+                 `((typst-ts-mode) .
+                   ,(eglot-alternatives `(,typst-ts-lsp-download-path
+                                          "tinymist"
+                                          "typst-lsp"))))))
+(use-package websocket
+  :ensure t)
+(use-package typst-preview
+  :ensure (:type git
+		 :host github
+		 :repo "sinofine/typst-preview.el"))
 ;;; rust
 (use-package rust-mode
   :ensure t

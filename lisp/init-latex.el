@@ -27,7 +27,8 @@
   (setq LaTeX-electric-left-right-brace t
 	TeX-auto-save t
 	TeX-parse-self t)
-  (add-to-list 'auto-mode-alist '("\\.tex\\'" LaTeX-mode t))
+  (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
+  (add-to-list 'auto-mode-alist '("\\.mkiv\\'" . ConTeXt-mode))
   (add-hook 'ConTeXt-mode-hook
 	    (lambda ()
 	      (keymap-set ConTeXt-mode-map "("
@@ -44,5 +45,5 @@
   (LaTeX-mode-hook . eglot)
   ;; :defer t
   :after (auctex))
-
+(use-package texpresso)
 (provide 'init-latex)

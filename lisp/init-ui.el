@@ -15,9 +15,9 @@
 			      :color "light gray"
 			      ;; :style 'flat-button
 			      ))
-  ;; (scroll-bar-mode -1)
-  ;; (menu-bar-mode -1)
-  ;; (set-face-attribute 'fringe nil :background "white")
+  (scroll-bar-mode -1)
+  (menu-bar-mode -1)
+  (set-face-attribute 'fringe nil :background "white")
   ;; (global-display-line-numbers-mode)
   ;; (fringe-mode 0)
   ;; (add-hook
@@ -100,13 +100,15 @@
 	    (lambda () (setq display-time-string-forms '((cn-zodiac-time 'branches)))
 	      (display-time-mode))))
 (defun config-font (frame)
+  ;; (interactive)
   (dolist (charset '(kana han cjk-misc bopomofo))
   (set-fontset-font t ;;"fontset-default"
                     charset
 		    (font-spec :family "等距更纱宋体 Slab SC" :weight 'medium )))
   (set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
-  (remove-hook 'after-make-frame-functions #'config-font)
+  ;; (remove-hook 'after-make-frame-functions #'config-font)
   )
+(config-font t)
 (add-hook 'after-make-frame-functions #'config-font)
 
 ;; (setopt header-line-format nil)

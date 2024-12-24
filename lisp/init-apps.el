@@ -28,10 +28,36 @@
                                   )
               ;; ))
     ;; )
-  )
-(use-package magit :ensure t
+	      )
+(use-package magit :ensure nil
   :bind ("C-x a m" . magit))
 (use-package pdf-tools
   :ensure t
   :defer t)
+(use-package rime
+  :config
+  (setq default-input-method "rime")
+  (setq rime-user-data-dir "~/.config/rime"
+        rime-share-data-dir "/etc/profiles/per-user/sinofine/share/rime-data"
+        rime-show-candidate 'posframe
+        rime-posframe-style 'simple
+        rime-inline-ascii-trigger 'shift-l
+        rime-show-preedit 'inline
+        rime-commit1-forall t
+        rime-disable-predicates '(rime-predicate-evil-mode-p
+                                  rime-predicate-prog-in-code-p
+                                  rime-predicate-punctuation-after-space-cc-p
+				  ;; rime-predicate-after-alphabet-char-p
+				  ;; rime-predicate-space-after-cc-p
+				  meow-normal-mode-p
+				  meow-motion-mode-p
+				  meow-keypad-mode-p
+                                  rime-predicate-tex-math-or-command-p)
+        rime-inline-predicates '(rime-predicate-after-alphabet-char-p
+                                 rime-predicate-space-after-cc-p
+                                 )
+	)
+  (define-key rime-active-mode-map (kbd "M-j") 'rime-inline-ascii)
+  (define-key rime-mode-map (kbd "M-j") 'rime-force-enable)
+  )
 (provide 'init-apps)

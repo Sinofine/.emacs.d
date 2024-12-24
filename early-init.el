@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq gc-cons-threshold 100000000)
 ;; (load-theme )
@@ -14,9 +15,8 @@
 (setq user-full-name "Sinofine Lotusie"
       user-mail-address "i@sinofine.me"
       epa-file-encrypt-to "B81EC219E528172D41DE8984C5A8B0172CE2D811")
-(require 'benchmark-init-modes)
 (setq elpaca-core-date '(20240430))
-(defvar elpaca-installer-version 0.7)
+(defvar elpaca-installer-version 0.8)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
@@ -59,3 +59,4 @@
 (elpaca elpaca-use-package
   (elpaca-use-package-mode))
 (add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
+(require 'benchmark-init-modes)

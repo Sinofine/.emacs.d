@@ -20,7 +20,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("602c523efed33ab7bc708c31ed9d641abe123e2bfbbe124e46faf68c95e67d8d"
-     default)))
+     default))
+ '(org-export-use-babel nil nil nil "Customized with use-package ob-sagemath")
+ '(warning-suppress-log-types '((emacs))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -28,3 +30,4 @@
  ;; If there is more than one, they won't work right.
  '(font-lock-function-name-face ((t (:foreground "Blue1" :family "CMU Concrete"))))
  '(font-lock-string-face ((t (:foreground "VioletRed4" :family "CMU Concrete")))))
+(put 'downcase-region 'disabled nil)
