@@ -60,10 +60,11 @@
 (elpaca elpaca-use-package
   (elpaca-use-package-mode))
 (if is-android
-    (progn
-      (add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
-      (require 'benchmark-init-modes))
   (progn
     (setenv "PATH" (format "%s:%s" "/data/data/com.termux/files/usr/bin"
 			   (getenv "PATH")))
-    (push "/data/data/com.termux/files/usr/bin" exec-path)))
+    (push "/data/data/com.termux/files/usr/bin" exec-path))
+  (progn
+    (add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
+    (require 'benchmark-init-modes))
+  )
