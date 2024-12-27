@@ -45,5 +45,6 @@
   (LaTeX-mode-hook . eglot)
   ;; :defer t
   :after (auctex))
-(use-package texpresso)
+(when (not is-android)
+  (use-package texpresso))
 (provide 'init-latex)

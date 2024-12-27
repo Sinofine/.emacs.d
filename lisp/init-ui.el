@@ -8,49 +8,55 @@
    text-mode-ispell-word-completion nil
    read-extended-command-predicate #'command-completion-default-include-p)
   (pixel-scroll-precision-mode 1)
-  (tool-bar-mode -1)
+  (when (not is-android)
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1)
+    (menu-bar-mode -1)
+    )
   (set-face-attribute 'mode-line nil
 		      :background "white smoke"
 		      :box '( :line-width -1
 			      :color "light gray"
 			      ;; :style 'flat-button
 			      ))
-  (scroll-bar-mode -1)
-  (menu-bar-mode -1)
   (set-face-attribute 'fringe nil :background "white")
-  ;; (global-display-line-numbers-mode)
-  ;; (fringe-mode 0)
-  ;; (add-hook
-  ;; 'after-init-hook
-  ;; (lambda ()
-  ;; (when (display-graphic-p)
-
-  ;; )
   (delete-selection-mode 1)
   (setq indicate-buffer-boundaries nil
 	indicate-empty-lines nil)
-  ;; (set-fringe-mode 0)
-  ;; ))
   )
-(use-package activity-watch-mode
-  :ensure t
-  :config
-  (add-hook 'elpaca-after-init-hook
-	    (lambda () (global-activity-watch-mode))))
-;; (use-package mood-line
-;; :ensure t
-;; :config (add-hook 'elpaca-after-init-hook 'mood-line-mode)
-;; :custom (mood-line-glyph-alist mood-line-glyphs-fira-code))
+(when (not is-android)
+  (use-package activity-watch-mode
+    :ensure t
+    :config
+    (add-hook 'elpaca-after-init-hook
+	      (lambda () (global-activity-watch-mode))))
+  (defun config-font (frame)
+    ;; (interactive)
+    (dolist (charset '(kana han cjk-misc bopomofo))
+      (set-fontset-font t ;;"fontset-default"
+			charset
+			(font-spec :family "等距更纱宋体 Slab SC" :weight 'medium )))
+    (set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
+    ;; (remove-hook 'after-make-frame-functions #'config-font)
+    )
+  (config-font t)
+  (add-hook 'after-make-frame-functions #'config-font)
+
+  ;; (setopt header-line-format nil)
+  ;; (add-to-list 'default-frame-alist '(font . "CMU Typewriter Text-16"))
+  (add-to-list 'default-frame-alist '(width . 90))
+  (add-to-list 'default-frame-alist '(height . 27))
+  )
 (use-package minions
   :ensure t
   :config
   (add-hook 'elpaca-after-init-hook
 	    (lambda () (minions-mode))))
-(use-package dired-subtree :ensure t
-  :after dired
-  :config
-  (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
-  (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))
+;; (use-package dired-subtree :ensure t
+;;   :after dired
+;;   :config
+;;   (bind-key "<tab>" #'dired-subtree-toggle dired-mode-map)
+;;   (bind-key "<backtab>" #'dired-subtree-cycle dired-mode-map))
 ;; (use-package doom-modeline
 ;;   :ensure t
 ;;   :custom (doom-modeline-height 28)
@@ -99,21 +105,5 @@
   (add-hook 'elpaca-after-init-hook
 	    (lambda () (setq display-time-string-forms '((cn-zodiac-time 'branches)))
 	      (display-time-mode))))
-(defun config-font (frame)
-  ;; (interactive)
-  (dolist (charset '(kana han cjk-misc bopomofo))
-  (set-fontset-font t ;;"fontset-default"
-                    charset
-		    (font-spec :family "等距更纱宋体 Slab SC" :weight 'medium )))
-  (set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
-  ;; (remove-hook 'after-make-frame-functions #'config-font)
-  )
-(config-font t)
-(add-hook 'after-make-frame-functions #'config-font)
-
-;; (setopt header-line-format nil)
-;; (add-to-list 'default-frame-alist '(font . "CMU Typewriter Text-16"))
-(add-to-list 'default-frame-alist '(width . 90))
-(add-to-list 'default-frame-alist '(height . 27))
 (defun display-startup-echo-area-message () nil)
 (provide 'init-ui)

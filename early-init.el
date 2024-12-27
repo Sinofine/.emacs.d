@@ -1,6 +1,7 @@
 ;; -*- lexical-binding: t; -*-
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 (setq gc-cons-threshold 100000000)
+(setq is-android (string-equal system-type "android"))
 ;; (load-theme )
 (setq frame-inhibit-implied-resize t)
 
@@ -58,5 +59,11 @@
 (setq package-enable-at-startup nil)
 (elpaca elpaca-use-package
   (elpaca-use-package-mode))
-(add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
-(require 'benchmark-init-modes)
+(if is-android
+    (progn
+      (add-hook 'elpaca-after-load-hook 'benchmark-init/deactivate)
+      (require 'benchmark-init-modes))
+  (progn
+    (setenv "PATH" (format "%s:%s" "/data/data/com.termux/files/usr/bin"
+			   (getenv "PATH")))
+    (push "/data/data/com.termux/files/usr/bin" exec-path)))
