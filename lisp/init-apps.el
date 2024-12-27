@@ -45,7 +45,7 @@
     (define-key rime-active-mode-map (kbd "M-j") 'rime-inline-ascii)
     (define-key rime-mode-map (kbd "M-j") 'rime-force-enable))
   )
-(use-package magit :ensure t
+(use-package magit :ensure nil
   :bind ("C-x a m" . magit))
 (use-package pdf-tools
   :ensure t
