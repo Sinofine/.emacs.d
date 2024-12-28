@@ -24,9 +24,7 @@
   (TeX-electric-sub-and-superscript t)
   (reftex-plug-into-AUCTeX t)
   :init
-  (setq LaTeX-electric-left-right-brace t
-	TeX-auto-save t
-	TeX-parse-self t)
+  (setq TeX-parse-self t)
   (add-to-list 'auto-mode-alist '("\\.tex\\'" . LaTeX-mode))
   (add-to-list 'auto-mode-alist '("\\.mkiv\\'" . ConTeXt-mode))
   (add-hook 'ConTeXt-mode-hook
