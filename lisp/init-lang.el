@@ -44,7 +44,8 @@
 (use-package typst-ts-mode
   :ensure (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
   :custom
-  (typst-ts-mode-watch-options "--open"))
+  (typst-ts-mode-watch-options "--open")
+  (tab-width 2))
 
 (with-eval-after-load 'eglot
   (with-eval-after-load 'typst-ts-mode
@@ -59,4 +60,8 @@
   :ensure (:type git
 		 :host github
 		 :repo "sinofine/typst-preview.el"))
+;;; sbcl
+(use-package sly
+  :ensure t
+  :custom (inferior-lisp-program "sbcl"))
 (provide 'init-lang)

@@ -2,24 +2,24 @@
 (when (not is-android)
   (use-package telega :ensure t
     :bind ("C-x a t" . telega)
-    :custom
-    (telega-avatar-workaround-gaps-for '(return t))
+    ;; :custom
+    ;; (telega-avatar-workaround-gaps-for '(return t))
     :config
-    (set-face-attribute 'telega-msg-heading nil
-			:background nil
-			:underline 't
-			:height 1.2
-			)
-    (set-face-attribute 'telega-msg-inline-forward nil
-			;; :background "light gray"
-			:underline nil
-			:height 0.84
-			)
-    (set-face-attribute 'telega-msg-inline-reply nil
-			;; :background "light gray"
-			:underline nil
-			:height 0.84
-			)
+    ;; (set-face-attribute 'telega-msg-heading nil
+		;; 	:background nil
+		;; 	:underline 't
+		;; 	:height 1.2
+		;; 	)
+    ;; (set-face-attribute 'telega-msg-inline-forward nil
+		;; 	;; :background "light gray"
+		;; 	:underline nil
+		;; 	:height 0.84
+		;; 	)
+    ;; (set-face-attribute 'telega-msg-inline-reply nil
+		;; 	;; :background "light gray"
+		;; 	:underline nil
+		;; 	:height 0.84
+		;; 	)
     )
   (use-package rime
     :config

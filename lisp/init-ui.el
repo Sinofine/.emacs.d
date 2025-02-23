@@ -7,7 +7,7 @@
    tab-always-indent 'complete
    text-mode-ispell-word-completion nil
    read-extended-command-predicate #'command-completion-default-include-p)
-  (pixel-scroll-precision-mode 1)
+  ;; (pixel-scroll-precision-mode 1)
   (when (not is-android)
     (tool-bar-mode -1)
     (scroll-bar-mode -1)
@@ -35,8 +35,9 @@
     (dolist (charset '(kana han cjk-misc bopomofo))
       (set-fontset-font t ;;"fontset-default"
 			charset
-			(font-spec :family "等距更纱宋体 Slab SC" :weight 'medium )))
+			(font-spec :family "等距更纱宋体 Slab SC" )))
     (set-frame-font (font-spec :family "CMU Typewriter Text" :size 16) nil t)
+    (set-face-font 'variable-pitch (font-spec :family "NewComputerModern10"))
     ;; (remove-hook 'after-make-frame-functions #'config-font)
     )
   (config-font t)
@@ -52,6 +53,8 @@
   :config
   (add-hook 'elpaca-after-init-hook
 	    (lambda () (minions-mode))))
+;; (use-package standard-themes
+;;   :ensure t)
 ;; (use-package dired-subtree :ensure t
 ;;   :after dired
 ;;   :config
@@ -105,5 +108,12 @@
   (add-hook 'elpaca-after-init-hook
 	    (lambda () (setq display-time-string-forms '((cn-zodiac-time 'branches)))
 	      (display-time-mode))))
+(use-package ultra-scroll
+  :ensure (ultra-scroll :host github :repo "jdtsmith/ultra-scroll")
+  :custom
+  (scroll-conservatively 101)
+  (scroll-margin 0)
+  :config
+  (ultra-scroll-mode 1))
 (defun display-startup-echo-area-message () nil)
 (provide 'init-ui)

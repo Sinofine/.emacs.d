@@ -7,6 +7,7 @@
 (require 'init-latex)
 (require 'init-apps)
 (require 'init-snippets)
+;; (require 'init-completion)
 ;; (require 'init-tempel)
 (require 'init-vertico)
 (require 'init-utils)

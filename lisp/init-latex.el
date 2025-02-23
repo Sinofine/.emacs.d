@@ -14,6 +14,7 @@
   (LaTeX-electric-left-right-brace t)
   (prettify-symbols-unprettify-at-point t)
   (texmathp-tex-commands '(("\\startformula" sw-on) ("\\stopformula" sw-off)))
+  (cdlatex-math-modify-alist '((98 "\\mathbb" "\\textbf" t nil nil)))
 
   (TeX-view-program-selection '((output-pdf "Zathura")))
   (TeX-save-query nil)
